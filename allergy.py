@@ -16,5 +16,8 @@ def main():
     milk_data_results = milk_data['results']
     for idx in range(len(milk_data_results)):
         print(milk_data_results[idx]['sku'])
+
+
+
 main()
 
