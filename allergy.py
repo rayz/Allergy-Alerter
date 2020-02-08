@@ -1,7 +1,7 @@
 import requests
 import json
 
-API_KEY = "79000dff9dee41f78285d1a3dc418e1a"
+API_KEY = "PUT API KEY HERE"
 
 URL = "https://api.wegmans.io/products/search?query={}&api-version=2018-10-18&subscription-key={}"
 
