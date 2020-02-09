@@ -23,26 +23,33 @@ function query(){
 
     var brand = parsedInfo.brand;
     var name = parsedInfo.name;
-    var ingredients = parsedInfo.ingredients[0];
-    if(ingredients){
-      ingredients = ingredients.substring(0,ingredients.length-1);
+    var ingredients = parsedInfo.ingredients
+    var ingredientString = ingredients[0];
+    if(ingredientString){
+      ingredientString = ingredientString.substring(0,ingredientString.length-1);
       
       var allergenInput = document.getElementById("allergen");
       allergen = allergenInput.value;
 
-      var indiv_ing = ingredients.split(", ");
-      if(indiv_ing.includes(allergen)){
+      var indiv_ing = ingredientString.split(", ");
+  
+      var allergenString = allergen.toString();
+      var allergenIndex = indiv_ing.indexOf(allergenString);
+
+      if(allergenIndex != -1){
+        var ingredientSplit = ingredientString.split(allergenString);
         outputDiv.innerHTML = outputDiv.innerHTML+
           "<div class='allergen'><div class='product'>"+
           brand+", "+
           name+"</div></br><div class = 'ingredients'>"+
-          ingredients+"</div></br>";
+          ingredientSplit[0]+"<b>"+allergenString+"</b>"+
+          ingredientSplit[1]+"</div></br>";
       }else{
         outputDiv.innerHTML = outputDiv.innerHTML+
           "<div><div class='product'>"+
           brand+", "+
           name+"</div></br><div class = 'ingredients'>"+
-          ingredients+"</div></br>";
+          ingredientString+"</div></br>";
       }
     }
   }
