@@ -2,16 +2,20 @@ function query(){
   var productInput = document.getElementById("product");
   product = productInput.value;
 
+  var outputDiv = document.getElementById("output");
+  outputDiv.innerHTML = "Searching...";
+
   var products = search_products(product);
   var product_data = JSON.parse(products).results;
   
-  console.log(product_data);
   if(!product_data){
     console.log("500!")
+    outputDiv.innerHTML = "Your query received a 500 Server error from the request. </br> Please try again later. </br> (Note: case-sensitive)";
+    //setTimeout("query()", 10);
+    //setTimeout("document.location.reload()", 3000)
     return
   }
-  //var display_data = [];
-  var outputDiv = document.getElementById("output");
+  
   outputDiv.innerHTML = "";
   for(i=0;i<product_data.length&&i<10; i++){
     var info = product_info(product_data[i].sku);
@@ -22,16 +26,6 @@ function query(){
     var ingredients = parsedInfo.ingredients[0];
     if(ingredients){
       ingredients = ingredients.substring(0,ingredients.length-1);
-
-      /*display_data.push(parsedInfo.brand+", "+
-        parsedInfo.name+" </br>"+
-        parsedInfo.ingredients+" </br></br>");
-
-      /*display_data.push(parsedInfo.brand+" ")
-      display_data.push(parsedInfo.name+" ")
-      display_data.push("</br>")
-      display_data.push(parsedInfo.ingredients+" ")
-      display_data.push("</br></br>")*/
       
       var allergenInput = document.getElementById("allergen");
       allergen = allergenInput.value;
@@ -52,8 +46,6 @@ function query(){
       }
     }
   }
-  var outputDiv = document.getElementById("output");
-  //outputDiv.innerHTML = display_data;
 }
 
 function search_products(term){
