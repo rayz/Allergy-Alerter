@@ -1,2 +1,2 @@
-//paste your Wegman's Subscription id here
+//paste your Wegman's subscription ID here!
 var API_KEY = ""
