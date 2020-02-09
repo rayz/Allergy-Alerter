@@ -1,5 +1,3 @@
-var API_KEY = "a6453cb8045340ee83dd24c23f3d7505"
-
 function query(){
   var productInput = document.getElementById("product");
   product = productInput.value;
