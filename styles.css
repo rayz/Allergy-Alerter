@@ -1,3 +1,61 @@
+body{
+    background-color: #CE3F24;
+    font-family: 'Courier Prime', monospace;
+    text-align: center;
+    font-size: 100%;
+}
+button{
+    font-size: inherit;
+    height: 34px;
+    width: 25%;
+    max-width: 200px;
+    background-color: #dddddd;
+    border: 1px solid;
+    transition: 0.5s;
+}
+button:hover{
+    background-color: #cccccc;
+}
+input{
+    font-size: inherit;
+    text-align: center;
+    height: 30px;
+    width: 35%;
+    max-width: 350px;
+    border: 1px solid;
+    transition: 0.5s;
+}
+input:hover{
+    background-color: #EEEEEE;
+}
+.title{
+    font-size: 150%;
+    width: 100%;
+    margin-top: 3%;
+}
+.outer{
+    background-color: #ffffff;
+    border: 1px solid;
+    border-radius: 4px;
+
+    width: 100%;
+    max-width: 600px;
+
+    height: 100%;
+    min-height: 800px;
+
+    margin: 0 auto;
+    margin-top: 3%;
+    padding: 40px;
+}
+.product{
+    float: left;
+}
+.ingredients{
+    width: 90%;
+    margin-left: 5%;
+    text-align: justify;
+}
 .allergen{
     color: red;
 }

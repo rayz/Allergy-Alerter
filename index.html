@@ -3,15 +3,21 @@
   <head>
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div>
-        <input id="product" value="Milk"/>
-        <input id="allergen" value="Vitamin A Palmitate"/>
-        <button onclick=query() id="update">Update</button>
+    <div class="title">
+      ALLERGY ALERTER
     </div>
-    <div id="output">
-
+    <div class="outer">
+      <div>
+          <input id="product" value="Chocolate"/>
+          <input id="allergen" value="Vitamin A Palmitate"/>
+          <button onclick=query() id="update">Update</button>
+      </div>
+      <br/>
+      <div id="output"></div>
     </div>
   </body>
 </html>
