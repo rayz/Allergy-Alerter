@@ -50,6 +50,7 @@ input:hover{
 }
 .product{
     float: left;
+    font-weight: bold;
 }
 .ingredients{
     width: 90%;
